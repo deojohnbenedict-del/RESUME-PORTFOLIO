@@ -1,7 +1,5 @@
-// Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Mobile menu
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
@@ -9,7 +7,6 @@ navLinks.querySelectorAll("a").forEach(a =>
   a.addEventListener("click", () => navLinks.classList.remove("open"))
 );
 
-// Theme toggle (remembers choice)
 const root = document.documentElement;
 try {
   const saved = localStorage.getItem("theme");
@@ -22,7 +19,6 @@ document.getElementById("themeToggle").addEventListener("click", () => {
   try { localStorage.setItem("theme", next); } catch (e) {}
 });
 
-// Typing effect
 const roles = ["Aspiring Data Analyst", "Data Optimization Engineer", "Apps Script Developer", "Dashboard Builder"];
 const typedEl = document.getElementById("typed");
 let r = 0, c = 0, deleting = false;
@@ -37,8 +33,6 @@ function type() {
 }
 type();
 
-// Skills loop: repeat the items so the track is wider than the screen,
-// then duplicate the whole set once so the -50% animation loops seamlessly.
 document.querySelectorAll(".track").forEach(track => {
   const originals = Array.from(track.children);
   const setWidth = () => originals.reduce((w, li) => w + li.getBoundingClientRect().width, 0);
@@ -49,7 +43,6 @@ document.querySelectorAll(".track").forEach(track => {
   Array.from(track.children).forEach(li => track.appendChild(li.cloneNode(true)));
 });
 
-// Use real screenshots if they exist in /images (hr.png, ledger.png, sales.png)
 document.querySelectorAll(".shot[data-img]").forEach(el => {
   const img = new Image();
   img.onload = () => {
@@ -59,7 +52,6 @@ document.querySelectorAll(".shot[data-img]").forEach(el => {
   img.src = el.dataset.img;
 });
 
-// Reveal on scroll
 document.querySelectorAll(".section .wrap > *, .project, .timeline li, .path li").forEach(el => el.classList.add("reveal"));
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -68,7 +60,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-// Active nav link on scroll
 const sections = document.querySelectorAll("main section[id]");
 window.addEventListener("scroll", () => {
   let current = "";

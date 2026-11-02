@@ -1,18 +1,13 @@
-# Dependencies
 node_modules/
 
-# Environment variables and secrets
 .env
 .env.local
 .env.production
 
-# Vercel
 .vercel/
 
-# Build files
 dist/
 build/
 
-# System files
 .DS_Store
 Thumbs.db

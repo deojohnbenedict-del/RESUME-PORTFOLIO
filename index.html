@@ -267,8 +267,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="home" class="hero">
+        <section id="home" class="hero">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="hero-inner">
@@ -286,8 +285,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
+        <section id="about" class="section">
       <div class="wrap">
         <p class="kicker">01 / About</p>
         <h2 class="title">Building with data, end to end.</h2>
@@ -314,8 +312,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- CAREER GOALS -->
-    <section id="goals" class="section alt">
+        <section id="goals" class="section alt">
       <div class="wrap">
         <p class="kicker">02 / Career Goals</p>
         <h2 class="title">Where I'm heading: Data Analytics.</h2>
@@ -349,8 +346,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- SKILLS: looping marquee -->
-    <section id="skills" class="section skills-section">
+        <section id="skills" class="section skills-section">
       <div class="wrap">
         <p class="kicker">03 / Technical Skills</p>
         <h2 class="title">The stack I work with.</h2>
@@ -370,8 +366,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
-    <section id="projects" class="section alt">
+        <section id="projects" class="section alt">
       <div class="wrap">
         <p class="kicker">04 / Featured Projects</p>
         <h2 class="title">Web apps I built with Google Apps Script.</h2>
@@ -432,8 +427,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
+        <section id="experience" class="section">
       <div class="wrap">
         <p class="kicker">05 / Experience &amp; Education</p>
         <h2 class="title">My journey so far.</h2>
@@ -445,8 +439,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
                 <span class="date">Nov 2025 – Present</span>
                 <h4>Data Optimization Analyst</h4>
                 <p class="meta">ETAP INC.</p>
-                <!-- EDIT: add your key responsibilities or achievements here -->
-              </li>
+                              </li>
               <li>
                 <span class="date">Feb 2024 – Aug 2025</span>
                 <h4>Verification Officer</h4>
@@ -473,8 +466,7 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section alt contact">
+        <section id="contact" class="section alt contact">
       <div class="wrap center">
         <p class="kicker">06 / Contact</p>
         <h2 class="title">Let's connect.</h2>
@@ -492,10 +484,8 @@ footer { text-align: center; padding: 28px; color: var(--muted); border-top: 1px
   </footer>
 
   <script>
-// Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Mobile menu
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
@@ -503,7 +493,6 @@ navLinks.querySelectorAll("a").forEach(a =>
   a.addEventListener("click", () => navLinks.classList.remove("open"))
 );
 
-// Theme toggle (remembers choice)
 const root = document.documentElement;
 try {
   const saved = localStorage.getItem("theme");
@@ -516,7 +505,6 @@ document.getElementById("themeToggle").addEventListener("click", () => {
   try { localStorage.setItem("theme", next); } catch (e) {}
 });
 
-// Typing effect
 const roles = ["Aspiring Data Analyst", "Data Optimization Analyst", "Apps Script Developer", "Dashboard Builder"];
 const typedEl = document.getElementById("typed");
 let r = 0, c = 0, deleting = false;
@@ -531,8 +519,6 @@ function type() {
 }
 type();
 
-// Skills loop: repeat the items so the track is wider than the screen,
-// then duplicate the whole set once so the -50% animation loops seamlessly.
 document.querySelectorAll(".track").forEach(track => {
   const originals = Array.from(track.children);
   const setWidth = () => originals.reduce((w, li) => w + li.getBoundingClientRect().width, 0);
@@ -543,7 +529,6 @@ document.querySelectorAll(".track").forEach(track => {
   Array.from(track.children).forEach(li => track.appendChild(li.cloneNode(true)));
 });
 
-// Use real screenshots if they exist in /images (hr.png, ledger.png, sales.png)
 document.querySelectorAll(".shot[data-img]").forEach(el => {
   const img = new Image();
   img.onload = () => {
@@ -553,7 +538,6 @@ document.querySelectorAll(".shot[data-img]").forEach(el => {
   img.src = el.dataset.img;
 });
 
-// Reveal on scroll
 document.querySelectorAll(".section .wrap > *, .project, .timeline li, .path li").forEach(el => el.classList.add("reveal"));
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -562,7 +546,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-// Active nav link on scroll
 const sections = document.querySelectorAll("main section[id]");
 window.addEventListener("scroll", () => {
   let current = "";
