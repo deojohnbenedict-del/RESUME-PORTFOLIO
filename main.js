@@ -19,7 +19,7 @@ document.getElementById("themeToggle").addEventListener("click", () => {
   try { localStorage.setItem("theme", next); } catch (e) {}
 });
 
-const roles = ["Aspiring Data Analyst", "Data Optimization Engineer", "Apps Script Developer", "Dashboard Builder"];
+const roles = ["Aspiring Data Engineer", "Data Optimization Engineer", "Apps Script Developer", "Dashboard Builder"];
 const typedEl = document.getElementById("typed");
 let r = 0, c = 0, deleting = false;
 function type() {
